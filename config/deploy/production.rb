@@ -1,6 +1,6 @@
 # Set the servers for this stage.
-role :app, "web1b.apidatagov.aws", "web2b.apidatagov.aws", "web1.apidatagov.aws", "web2.apidatagov.aws"
-role :web, "web1b.apidatagov.aws", "web2b.apidatagov.aws", "web1.apidatagov.aws", "web2.apidatagov.aws"
+role :app, "web1.apidatagov.aws", "web2.apidatagov.aws"
+role :web, "web1.apidatagov.aws", "web2.apidatagov.aws"
 
 # Set the base path for deployment.
 set :deploy_to_base, "/srv"
@@ -13,6 +13,8 @@ set :copy_exclude, [".git"]
 
 # Set the Rails environment.
 set :rails_env, "production"
+
+set :branch, "gsaprod"
 
 set :user, "root"
 ssh_options[:keys] = ["/vagrant/workspace/aws_nmuerdter.pem"]
